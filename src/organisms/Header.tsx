@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button } from './Button';
+import RightMenu from '../components/molecules/rightmenunav';
 
 const Container = styled.header`
   display: flex;
@@ -28,11 +28,6 @@ const StyledLink = styled(Link)`
   margin-left: 20px;
   text-decoration: none;
   color: #333;
-`;
-
-const Lang = styled(StyledLink)`
-  border: 1px solid #000;
-  padding: 5px;
 `;
 
 const SearchContainer = styled.div`
@@ -86,17 +81,7 @@ export const Header: React.FC = () => {
         <StyledLink to="/">Udemy Business</StyledLink>
         <StyledLink to="/">Tech on Udemy</StyledLink>
       </HideXS>
-
-      <StyledLink to="/">
-        <i className="fa-solid fa-cart-shopping"></i>
-      </StyledLink>
-      <HideXS>
-        <Button buttonType="secondary">Log in</Button>
-        <Button>Sign up</Button>
-        <Lang to="/">
-          <i className="fa-solid fa-globe"></i>
-        </Lang>
-      </HideXS>
+      <RightMenu></RightMenu>
     </Container>
   );
 };

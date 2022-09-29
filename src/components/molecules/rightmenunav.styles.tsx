@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-export const HideXS = styled.div`
+export const Container = styled.div`
   display: none;
   @media (min-width: 768px) {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 `;

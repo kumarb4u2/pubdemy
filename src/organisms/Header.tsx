@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import RightMenu from '../components/molecules/rightmenunav';
 
 const Container = styled.header`
@@ -22,12 +21,6 @@ const Container = styled.header`
 const Logo = styled.div`
   font-size: 32px;
   font-weight: bold;
-`;
-
-const StyledLink = styled(Link)`
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
 `;
 
 const SearchContainer = styled.div`
@@ -58,29 +51,15 @@ const MenuIcon = styled.i`
   }
 `;
 
-const HideXS = styled.div`
-  display: none;
-  @media (min-width: 768px) {
-    display: block;
-  }
-`;
-
 export const Header: React.FC = () => {
   return (
     <Container>
       <MenuIcon className="fa-solid fa-bars"></MenuIcon>
       <Logo>Pubdemy</Logo>
-      <HideXS>
-        <StyledLink to="/">Categories</StyledLink>
-      </HideXS>
       <SearchContainer>
         <Search type="text" placeholder="Search for anything" />
         <SearchIcon className="fa-solid fa-magnifying-glass"></SearchIcon>
       </SearchContainer>
-      <HideXS>
-        <StyledLink to="/">Udemy Business</StyledLink>
-        <StyledLink to="/">Tech on Udemy</StyledLink>
-      </HideXS>
       <RightMenu></RightMenu>
     </Container>
   );

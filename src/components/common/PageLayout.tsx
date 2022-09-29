@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
 import { Header } from '../../organisms/Header';
@@ -6,17 +7,19 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Content = styled.main`
-  max-width: 800px;
-  margin: 80px auto 0;
-  padding: 0 16px;
+const Content = styled.div`
+  margin-top: 80px;
 `;
 
 export const PageLayout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-      <Content>{children}</Content>
+      <Content>
+        <Container maxWidth="xl" fixed>
+          {children}
+        </Container>
+      </Content>
     </>
   );
 };

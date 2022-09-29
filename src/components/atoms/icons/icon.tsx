@@ -7,9 +7,10 @@ import { StyledIcon } from './icon.styles';
 type IconProps = {
   type?: string;
   name: string;
+  size?: number;
 };
 
-export default function Icon({ name, type }: IconProps) {
+export default function Icon({ name, type, size }: IconProps) {
   switch (name) {
     case 'FaBars':
       return (
@@ -26,7 +27,7 @@ export default function Icon({ name, type }: IconProps) {
     case 'BiCart':
       return (
         <StyledIcon>
-          <BiCart />
+          <BiCart size={size} />
         </StyledIcon>
       );
     default:
